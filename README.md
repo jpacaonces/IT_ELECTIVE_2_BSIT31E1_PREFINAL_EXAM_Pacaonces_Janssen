@@ -1,6 +1,6 @@
 IT_ELECTIVE_2_BSIT3A_PREFINAL_EXAM_DelaCruz_Juan
 IT ELECTIVE 2 – PREFINAL EXAMINATION
-Name: Saw, Michael Class and Section: BSIT31E1
+Name: Pacaonces, Janssen Class and Section: BSIT31E1
 
 Project Description
 This project is an ASP.NET Core MVC application created for the IT Elective 2 – Web System and Technologies Prefinal Examination.
