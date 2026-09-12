@@ -1,0 +1,42 @@
+﻿@model IEnumerable<IT_ELECTIVE_2_BSIT31E1_PREFINAL_EXAM_Pacaonces_Janssen.Models.ExamItem>
+
+@{
+    ViewData["Title"] = "Prefinal Exam Answers";
+}
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary">IT Elective 2 - Prefinal Exam</h1>
+        <p class="lead text-muted">Student: <strong>Janssen Pacaonces</strong> | Section: <strong>BSIT 31E1</strong></p>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="m-0 fw-bold">Question #@item.Id</h5>
+                        <span class="badge bg-light text-primary fs-6">Answer: @item.CorrectAnswer</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text fw-semibold fs-5">@item.Question</p>
+                        <div class="list-group mb-3">
+                            @foreach (var opt in item.Options)
+                            {
+                                var isCorrect = opt.StartsWith(item.CorrectAnswer);
+                                <div class="list-group-item @(isCorrect ? "list-group-item-success fw-bold" : "")">
+                                    @opt @(isCorrect ? " ✓" : "")
+                                </div>
+                            }
+                        </div>
+                        <div class="p-3 bg-light rounded border-start border-4 border-success">
+                            <small class="text-muted d-block fw-bold mb-1">Explanation:</small>
+                            <small class="text-dark">@item.Explanation</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
